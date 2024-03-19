@@ -15,7 +15,6 @@ export async function GET(context: APIContext) {
     site: context.site?.toString() || 'https://nikolovlazar.com',
     items: blog.map((post) => ({
       title: post.data.title,
-      description: post.data.description,
       pubDate: post.data.date,
       link: `/blog/${post.slug}`,
       content: sanitizeHtml(parser.render(post.body)),
